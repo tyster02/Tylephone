@@ -2,7 +2,7 @@
  * ESP32 DAC Synthesizer
  * 
  * Hardware Setup:
- * - 12 GPIO pins for keyboard (with pull-up resistors, touched with 3.3V stylus)
+ * - 12 GPIO pins for keyboard (each with 10kΩ pull-DOWN resistor to GND, touched with 3.3V stylus)
  * - 1 Rotary encoder for volume control
  * - 1 Passive buzzer on GPIO25 (DAC1)
  * - 1 2-way switch for octave selection
@@ -136,9 +136,10 @@ void setup() {
   Serial.begin(115200);
   Serial.println("\n=== ESP32 DAC Synthesizer ===");
   
-  // Initialize keyboard pins (INPUT with internal pullup)
+  // Initialize keyboard pins (INPUT with external pull-down resistors)
+  // Each pin should have a 10kΩ resistor connecting it to GND
   for (int i = 0; i < 12; i++) {
-    pinMode(KEY_PINS[i], INPUT_PULLUP);
+    pinMode(KEY_PINS[i], INPUT);
   }
   
   // Initialize encoder pins
@@ -266,9 +267,9 @@ void stopNote() {
 void scanKeyboard() {
   bool anyKeyPressed = false;
   
-  // Scan all keys (remember: they're pulled up, so LOW = pressed when stylus touches)
+  // Scan all keys (pins are pulled down, so HIGH = pressed when 3.3V stylus touches)
   for (int i = 0; i < 12; i++) {
-    if (digitalRead(KEY_PINS[i]) == LOW) {  // Stylus touching = LOW
+    if (digitalRead(KEY_PINS[i]) == HIGH) {  // 3.3V stylus touching = HIGH
       if (currentNote != i) {  // Only change if different note
         playNote(i);
       }
