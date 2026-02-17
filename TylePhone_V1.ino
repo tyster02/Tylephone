@@ -230,8 +230,8 @@ for (int i = 0; i < 13; i++) {  // Changed from 12 to 13
 }
   
   // Initialize encoder
-  pinMode(ENCODER_CLK, INPUT);
-  pinMode(ENCODER_DT, INPUT);
+  pinMode(ENCODER_CLK, INPUT_PULLUP);
+  pinMode(ENCODER_DT, INPUT_PULLUP);
   pinMode(ENCODER_SW, INPUT_PULLUP);
   
   // Initialize 7-segment display
