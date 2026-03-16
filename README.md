@@ -4,7 +4,7 @@ Buy me a coffee if you'd like: https://buymeacoffee.com/tylerjohnsonengineering
 
 ## Notes:
 The TylePhone_V1.ino file can be compiled with the arduino IDE and uploaded to an ESP32 (or whatever your preffered IDE is)
-The .gbr file can be uploaded to any quickfab pcb manufacturer. I used JLCPCB \(`-`)/
+The .gbr file can be uploaded to any quickfab pcb manufacturer. I used JLCPCB.
 The .stl files are also uploaded to my Thangs page - https://thangs.com/designer/Tyler%20Johnson
 
 Raw modifiable Onshape project files AND all the necessary hardware links can be found on my website: https://tylerslab.neocities.org/Tylephone
