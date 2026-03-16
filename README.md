@@ -7,5 +7,4 @@ The TylePhone_V1.ino file can be compiled with the arduino IDE and uploaded to a
 The .gbr file can be uploaded to any quickfab pcb manufacturer. I used JLCPCB \(`-`)/
 The .stl files are also uploaded to my Thangs page - https://thangs.com/designer/Tyler%20Johnson
 
-The hardware that I am using is:
-- 
+Raw modifiable Onshape project files AND all the necessary hardware links can be found on my website: https://tylerslab.neocities.org/Tylephone
